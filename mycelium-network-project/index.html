@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mushroom-Inspired Computer Network | AI Route Selection & Visualisation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient Background Orbs -->
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 36 36" width="32" height="32" fill="none">
+            <path d="M6 17C6 9.8 11.4 5 18 5C24.6 5 30 9.8 30 17C30 19.2 27.5 20.2 18 20.2C8.5 20.2 6 19.2 6 17Z" fill="url(#navCapGrad)" stroke="#6ee7b7" stroke-width="1.5"/>
+            <path d="M15 20.2V28.5C15 29.9 16.3 31 18 31C19.7 31 21 29.9 21 28.5V20.2" stroke="#a7f3d0" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M18 31C18 31 12 32.5 8 34M18 31C18 31 24 32.5 28 34" stroke="#34d399" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="13" cy="12" r="1.4" fill="#ecfdf5" opacity="0.8"/>
+            <circle cx="21" cy="10" r="1.1" fill="#ecfdf5" opacity="0.7"/>
+            <circle cx="24" cy="14.5" r="1.5" fill="#ecfdf5" opacity="0.75"/>
+            <defs>
+              <linearGradient id="navCapGrad" x1="6" y1="5" x2="30" y2="20" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#10b981"/>
+                <stop offset="1" stop-color="#065f46"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">MyceliNet AI</span>
+          <span class="brand-sub">Bio-Inspired Routing</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#simulation">Simulation</a>
+        <a href="#comparison">Bio vs Tech</a>
+        <a href="#project-info">Project Info</a>
+        <a href="#team">Team</a>
+        <a href="#simulation" class="nav-cta">Launch Lab</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== HOME / HERO SECTION ==================== -->
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="pill-badge">
+            <span class="pulse-dot"></span>
+            Engineering Project &bull; Bio-Inspired Networking
+          </div>
+          <h1 class="hero-title">
+            Mushroom-Inspired Computer Network Using <span class="text-gradient">AI-Based Route Selection</span> and Web Visualisation
+          </h1>
+          <p class="hero-description">
+            Nature perfected resilient networking millions of years ago. Underground fungal mycelium forms decentralised, self-healing webs capable of rerouting nutrients instantly around damaged pathways. This platform models computer networks after mycelium topology using real-time weighted Dijkstra AI routing and interactive failover simulation.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#simulation" class="btn btn-primary" id="btnStartSim">
+              <span>Start Simulation</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M5 12h14M13 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#comparison" class="btn btn-secondary" id="btnExploreNet">
+              <span>Explore Network</span>
+            </a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-chip">
+              <strong>12</strong>
+              <span>Computer Nodes</span>
+            </div>
+            <div class="metric-chip">
+              <strong>24</strong>
+              <span>Mycelium Links</span>
+            </div>
+            <div class="metric-chip">
+              <strong>Dijkstra AI</strong>
+              <span>Dynamic Routing</span>
+            </div>
+            <div class="metric-chip">
+              <strong>Auto-Heal</strong>
+              <span>Failover Engine</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Mushroom & Mycelium Network Illustration -->
+        <div class="hero-visual">
+          <div class="illustration-card glass-card">
+            <svg viewBox="0 0 520 460" class="mushroom-hero-svg" role="img" aria-label="Bioluminescent mushroom connected to an underground computer network">
+              <defs>
+                <radialGradient id="glowAura" cx="50%" cy="35%" r="50%">
+                  <stop offset="0%" stop-color="#34d399" stop-opacity="0.35"/>
+                  <stop offset="60%" stop-color="#059669" stop-opacity="0.1"/>
+                  <stop offset="100%" stop-color="#050d0a" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="capGrad" x1="150" y1="40" x2="370" y2="180" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#34d399"/>
+                  <stop offset="50%" stop-color="#059669"/>
+                  <stop offset="100%" stop-color="#064e3b"/>
+                </linearGradient>
+                <linearGradient id="stemGrad" x1="260" y1="150" x2="260" y2="270" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#a7f3d0"/>
+                  <stop offset="100%" stop-color="#10b981"/>
+                </linearGradient>
+                <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="4" result="blur"/>
+                  <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <!-- Background aura -->
+              <circle cx="260" cy="190" r="200" fill="url(#glowAura)"/>
+
+              <!-- Soil horizon line -->
+              <path d="M30 265 Q140 250 260 265 T490 265" stroke="#34d399" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="5 5" fill="none"/>
+              <text x="45" y="252" fill="#6ee7b7" font-size="10" opacity="0.65" font-family="monospace">FOREST FLOOR / NETWORK INTERFACE</text>
+
+              <!-- Underground Mycelium Branches -->
+              <g class="hero-mycelium-branches" stroke="#10b981" stroke-linecap="round" fill="none">
+                <path d="M260 265 C240 310, 175 305, 130 340" stroke-width="2.6" opacity="0.85"/>
+                <path d="M260 265 C280 310, 345 305, 390 340" stroke-width="2.6" opacity="0.85"/>
+                <path d="M260 265 C258 320, 260 355, 260 400" stroke-width="3" opacity="0.95"/>
+                <path d="M130 340 C165 375, 215 390, 260 400" stroke-width="2" opacity="0.7"/>
+                <path d="M390 340 C355 375, 305 390, 260 400" stroke-width="2" opacity="0.7"/>
+                <path d="M130 340 C95 365, 80 390, 75 415" stroke-width="1.6" opacity="0.55"/>
+                <path d="M390 340 C425 365, 440 390, 445 415" stroke-width="1.6" opacity="0.55"/>
+                <path d="M200 302 C225 335, 295 335, 320 302" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.6"/>
+              </g>
+
+              <!-- Animated Spores / Data Pulses along branches -->
+              <circle r="4" fill="#a7f3d0" filter="url(#softGlow)">
+                <animateMotion dur="3.2s" repeatCount="indefinite" path="M260 265 C240 310, 175 305, 130 340 C165 375, 215 390, 260 400"/>
+              </circle>
+              <circle r="4" fill="#34d399" filter="url(#softGlow)">
+                <animateMotion dur="2.8s" repeatCount="indefinite" path="M260 265 C280 310, 345 305, 390 340 C355 375, 305 390, 260 400"/>
+              </circle>
+
+              <!-- Secondary Mushroom -->
+              <g opacity="0.85">
+                <path d="M172 263 C172 238, 174 222, 176 212" stroke="#6ee7b7" stroke-width="7" stroke-linecap="round"/>
+                <path d="M142 214 C142 188, 158 176, 176 176 C194 176, 210 188, 210 214 C210 220, 142 220, 142 214Z" fill="url(#capGrad)" stroke="#6ee7b7" stroke-width="1.4"/>
+                <circle cx="164" cy="197" r="3" fill="#ecfdf5" opacity="0.65"/>
+                <circle cx="186" cy="203" r="2.2" fill="#ecfdf5" opacity="0.55"/>
+              </g>
+
+              <!-- Main Bioluminescent Mushroom -->
+              <g filter="url(#softGlow)">
+                <!-- Stem -->
+                <path d="M244 155 C246 205, 238 240, 240 268 L280 268 C282 240, 274 205, 276 155 Z" fill="url(#stemGrad)"/>
+                <!-- Gills underside -->
+                <ellipse cx="260" cy="154" rx="92" ry="16" fill="#064e3b" stroke="#34d399" stroke-width="1.2"/>
+                <!-- Cap -->
+                <path d="M158 152 C158 82, 204 46, 260 46 C316 46, 362 82, 362 152 C362 165, 158 165, 158 152 Z" fill="url(#capGrad)" stroke="#a7f3d0" stroke-width="1.8"/>
+                <!-- Bioluminescent spots -->
+                <circle cx="212" cy="100" r="8" fill="#ecfdf5" opacity="0.75"/>
+                <circle cx="255" cy="76" r="10" fill="#ecfdf5" opacity="0.85"/>
+                <circle cx="305" cy="105" r="7" fill="#ecfdf5" opacity="0.7"/>
+                <circle cx="282" cy="128" r="5" fill="#d1fae5" opacity="0.65"/>
+                <circle cx="192" cy="130" r="5.5" fill="#d1fae5" opacity="0.6"/>
+                <circle cx="330" cy="134" r="4" fill="#d1fae5" opacity="0.6"/>
+              </g>
+
+              <!-- Underground Computer Network Nodes -->
+              <g class="hero-computer-nodes">
+                <!-- Left Node -->
+                <g transform="translate(130, 340)">
+                  <circle r="22" fill="#071912" stroke="#34d399" stroke-width="2"/>
+                  <rect x="-10" y="-9" width="20" height="13" rx="2" fill="#065f46" stroke="#a7f3d0" stroke-width="1.3"/>
+                  <path d="M-5 8H5M0 4V8" stroke="#a7f3d0" stroke-width="1.3"/>
+                  <text y="34" text-anchor="middle" fill="#a7f3d0" font-size="10" font-family="monospace">NODE-A</text>
+                </g>
+                <!-- Right Node -->
+                <g transform="translate(390, 340)">
+                  <circle r="22" fill="#071912" stroke="#34d399" stroke-width="2"/>
+                  <rect x="-10" y="-9" width="20" height="13" rx="2" fill="#065f46" stroke="#a7f3d0" stroke-width="1.3"/>
+                  <path d="M-5 8H5M0 4V8" stroke="#a7f3d0" stroke-width="1.3"/>
+                  <text y="34" text-anchor="middle" fill="#a7f3d0" font-size="10" font-family="monospace">NODE-B</text>
+                </g>
+                <!-- Bottom Central Node -->
+                <g transform="translate(260, 400)">
+                  <circle r="24" fill="#071912" stroke="#6ee7b7" stroke-width="2.2"/>
+                  <rect x="-11" y="-10" width="22" height="14" rx="2" fill="#047857" stroke="#ecfdf5" stroke-width="1.4"/>
+                  <path d="M-6 9H6M0 4V9" stroke="#ecfdf5" stroke-width="1.4"/>
+                  <text y="36" text-anchor="middle" fill="#ecfdf5" font-size="10" font-weight="bold" font-family="monospace">AI ROUTER</text>
+                </g>
+                <!-- Peripheral Mini Nodes -->
+                <circle cx="75" cy="415" r="8" fill="#064e3b" stroke="#34d399" stroke-width="1.6"/>
+                <circle cx="445" cy="415" r="8" fill="#064e3b" stroke="#34d399" stroke-width="1.6"/>
+              </g>
+            </svg>
+            <div class="illustration-caption">
+              <span class="status-pill-mini"><span class="pulse-dot"></span> Self-Organising Topology</span>
+              <span>Organic Pathfinding &bull; Zero Single Point of Failure</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== NETWORK SIMULATION DASHBOARD ==================== -->
+    <section id="simulation" class="simulation-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Interactive Engineering Lab</span>
+          <h2>Mycelium Network Simulation &amp; AI Route Visualisation</h2>
+          <p>
+            Select a source and destination computer, transmit data packets using Dijkstra's AI route-selection algorithm, and sever connections to observe automatic real-time rerouting.
+          </p>
+        </div>
+
+        <!-- Live Telemetry Strip -->
+        <div class="telemetry-grid">
+          <div class="telemetry-card glass-card">
+            <span class="telemetry-label">Network Status</span>
+            <strong class="telemetry-value status-healthy" id="statNetworkStatus">Healthy &amp; Optimal</strong>
+          </div>
+          <div class="telemetry-card glass-card">
+            <span class="telemetry-label">Active Nodes</span>
+            <strong class="telemetry-value" id="statActiveNodes">12 / 12</strong>
+          </div>
+          <div class="telemetry-card glass-card">
+            <span class="telemetry-label">Active Connections</span>
+            <strong class="telemetry-value" id="statActiveLinks">24 / 24</strong>
+          </div>
+          <div class="telemetry-card glass-card">
+            <span class="telemetry-label">Source &rarr; Destination</span>
+            <strong class="telemetry-value" id="statEndpoints">PC-01 &rarr; PC-12</strong>
+          </div>
+          <div class="telemetry-card glass-card">
+            <span class="telemetry-label">Hop Count / AI Cost</span>
+            <strong class="telemetry-value" id="statHopsCost">0 Hops &bull; Cost 0</strong>
+          </div>
+          <div class="telemetry-card glass-card">
+            <span class="telemetry-label">Route Status</span>
+            <strong class="telemetry-value" id="statRouteStatus">Ready</strong>
+          </div>
+        </div>
+
+        <!-- Main Dashboard Workspace -->
+        <div class="dashboard-layout">
+          <!-- Left Controls Panel -->
+          <aside class="control-panel glass-card">
+            <div class="panel-block">
+              <h3>1. Route Endpoints</h3>
+              <div class="form-group">
+                <label for="sourceSelect">Source Computer</label>
+                <div class="select-row">
+                  <select id="sourceSelect" aria-label="Select Source Computer"></select>
+                  <button type="button" class="btn-pick" id="pickSourceBtn" title="Click a node on map to set source">Pick</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="destSelect">Destination Computer</label>
+                <div class="select-row">
+                  <select id="destSelect" aria-label="Select Destination Computer"></select>
+                  <button type="button" class="btn-pick" id="pickDestBtn" title="Click a node on map to set destination">Pick</button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="routingMode">AI Routing Strategy</label>
+                <select id="routingMode">
+                  <option value="ai">AI Weighted (Distance + Load Health)</option>
+                  <option value="shortest">Shortest Physical Distance</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="panel-block">
+              <h3>2. Data &amp; Failure Controls</h3>
+              <button type="button" class="btn btn-primary btn-full" id="btnSendData">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+                <span>Send Data</span>
+              </button>
+
+              <button type="button" class="btn btn-danger-outline btn-full" id="btnFailureMode">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                  <line x1="12" y1="9" x2="12" y2="13"/>
+                  <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <span id="failureModeBtnText">Simulate Connection Failure</span>
+              </button>
+
+              <button type="button" class="btn btn-amber-outline btn-full" id="btnSeverActive">
+                <span>Sever Active Route Link (1-Click)</span>
+              </button>
+
+              <button type="button" class="btn btn-ghost btn-full" id="btnResetNetwork">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="1 4 1 10 7 10"/>
+                  <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+                </svg>
+                <span>Reset Network</span>
+              </button>
+            </div>
+
+            <!-- Failed Connections Manager -->
+            <div class="panel-block">
+              <div class="panel-subheader">
+                <h3>3. Failed Connections</h3>
+                <span class="badge-count" id="failedCountBadge">0</span>
+              </div>
+              <div id="failedLinksList" class="failed-links-list">
+                <p class="empty-note">All mycelium links are healthy. Click any branch on the map to disable it.</p>
+              </div>
+            </div>
+
+            <!-- Visual Legend -->
+            <div class="panel-block legend-block">
+              <h3>Visual Legend</h3>
+              <ul class="legend-list">
+                <li><span class="legend-swatch swatch-active"></span> Active Mycelium Link</li>
+                <li><span class="legend-swatch swatch-route"></span> AI-Selected Route</li>
+                <li><span class="legend-swatch swatch-failed"></span> Failed / Disabled Link</li>
+                <li><span class="legend-swatch swatch-source"></span> Source Computer</li>
+                <li><span class="legend-swatch swatch-dest"></span> Destination Computer</li>
+                <li><span class="legend-swatch swatch-packet"></span> Travelling Data Packet</li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Main Interactive Network Visualisation Canvas -->
+          <div class="canvas-area">
+            <!-- Dynamic Alert / Failover Banner -->
+            <div class="sim-banner info-banner" id="simBanner" role="status" aria-live="polite">
+              <span class="banner-icon" id="simBannerIcon">&#9432;</span>
+              <span id="simBannerText">
+                Click <strong>Send Data</strong> to compute the optimal AI route, or click any green branch directly to simulate a link failure.
+              </span>
+            </div>
+
+            <div class="svg-wrapper glass-card" id="svgWrapper">
+              <svg id="networkSvg" viewBox="0 0 1000 580" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Interactive Mycelium Computer Network Diagram">
+                <defs>
+                  <filter id="routeGlow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="4.5" result="coloredBlur"/>
+                    <feMerge>
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                  <filter id="packetGlow" x="-60%" y="-60%" width="220%" height="220%">
+                    <feGaussianBlur stdDeviation="5" result="blur"/>
+                    <feMerge>
+                      <feMergeNode in="blur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                  <radialGradient id="nodeBgGrad" cx="50%" cy="35%" r="65%">
+                    <stop offset="0%" stop-color="#0f2f23"/>
+                    <stop offset="100%" stop-color="#06140f"/>
+                  </radialGradient>
+                </defs>
+
+                <!-- Decorative subtle background hyphae rootlets -->
+                <g id="hyphaeLayer" opacity="0.28"></g>
+                <!-- Network Edges -->
+                <g id="edgesLayer"></g>
+                <!-- Edge Labels / Weight Badges -->
+                <g id="edgeLabelsLayer"></g>
+                <!-- Animated Data Packet Layer -->
+                <g id="packetsLayer"></g>
+                <!-- Computer Nodes -->
+                <g id="nodesLayer"></g>
+              </svg>
+            </div>
+
+            <!-- Route Details & AI Decision Console -->
+            <div class="bottom-info-grid">
+              <div class="route-summary-card glass-card">
+                <div class="card-title-row">
+                  <h3>Current AI-Selected Path</h3>
+                  <span class="algo-tag">Dijkstra Graph Solver</span>
+                </div>
+                <div id="routePathVisual" class="route-path-chips">
+                  <span class="chip-muted">Click "Send Data" to calculate path</span>
+                </div>
+                <p class="route-explanation" id="routeExplanation">
+                  The AI route engine evaluates physical link distance, active connection status, and node load weights to choose the optimal mycelium branch sequence.
+                </p>
+              </div>
+
+              <div class="console-card glass-card">
+                <div class="card-title-row">
+                  <h3>Live AI Routing Console</h3>
+                  <button type="button" class="btn-mini" id="btnClearLog">Clear Log</button>
+                </div>
+                <div id="aiConsoleLog" class="console-log" aria-live="polite"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== BIOLOGICAL VS ENGINEERING COMPARISON ==================== -->
+    <section id="comparison" class="comparison-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Biomimicry Foundation</span>
+          <h2>Biological Mycelium vs. Computer Networks</h2>
+          <p>
+            Fungal mycelium exhibits remarkable decentralised intelligence—continuously adapting its topology to route resources around physical damage. Here is how biological structures translate into network engineering.
+          </p>
+        </div>
+
+        <div class="bio-highlights-grid">
+          <article class="glass-card bio-card">
+            <div class="bio-icon">&#127812;</div>
+            <h3>Decentralised Topology</h3>
+            <p>
+              Just as mycelium grows without a central brain, modern resilient computer networks eliminate single points of failure by interconnecting nodes in a multi-path mesh.
+            </p>
+          </article>
+          <article class="glass-card bio-card">
+            <div class="bio-icon">&#9889;</div>
+            <h3>Adaptive Path Selection</h3>
+            <p>
+              Mycelium reinforces high-efficiency channels and abandons congested or dry paths—mirrored by our AI cost-weighted Dijkstra route-selection algorithm.
+            </p>
+          </article>
+          <article class="glass-card bio-card">
+            <div class="bio-icon">&#128260;</div>
+            <h3>Self-Healing Rerouting</h3>
+            <p>
+              When soil disruption severs a fungal hypha, nutrients immediately divert through cross-linked anastomoses—just as our simulator bypasses failed links automatically.
+            </p>
+          </article>
+        </div>
+
+        <div class="table-container glass-card">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Mycelium Network (Biological)</th>
+                <th>Computer Network (Engineering)</th>
+                <th>Functional Equivalence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mycelium branches</strong></td>
+                <td><strong>Communication links</strong></td>
+                <td>Physical or wireless channels carrying traffic between endpoints.</td>
+              </tr>
+              <tr>
+                <td><strong>Fungal connection points</strong></td>
+                <td><strong>Network nodes</strong></td>
+                <td>Computers, routers, or relays that process and forward packets.</td>
+              </tr>
+              <tr>
+                <td><strong>Nutrient movement</strong></td>
+                <td><strong>Data transmission</strong></td>
+                <td>Flow of information packets from source host to destination host.</td>
+              </tr>
+              <tr>
+                <td><strong>Alternative fungal pathways</strong></td>
+                <td><strong>Alternative communication routes</strong></td>
+                <td>Redundant mesh branches enabling continuity during link outages.</td>
+              </tr>
+              <tr>
+                <td><strong>Network adaptation</strong></td>
+                <td><strong>Intelligent route selection</strong></td>
+                <td>AI-driven path computation optimising cost, latency, and reliability.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PROJECT INFORMATION SECTION ==================== -->
+    <section id="project-info" class="info-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Engineering Proposal &amp; Architecture</span>
+          <h2>Project Documentation</h2>
+          <p>
+            Comprehensive breakdown of the problem statement, objectives, methodology, technology stack, and expected engineering outcomes.
+          </p>
+        </div>
+
+        <div class="info-grid">
+          <!-- Problem Statement -->
+          <article class="glass-card info-card">
+            <div class="info-card-header">
+              <span class="info-num">01</span>
+              <h3>Problem Statement</h3>
+            </div>
+            <p>
+              Conventional static or tree-based computer networks often rely on rigid primary routes and centralised controllers. When a physical cable is severed, a relay experiences heavy congestion, or a link fails unexpectedly, packet loss occurs and manual reconfiguration is frequently required—leading to downtime and poor fault tolerance.
+            </p>
+          </article>
+
+          <!-- Objectives -->
+          <article class="glass-card info-card">
+            <div class="info-card-header">
+              <span class="info-num">02</span>
+              <h3>Objectives</h3>
+            </div>
+            <ul class="styled-list">
+              <li>Model a multi-node computer network inspired by the redundant, decentralised branching of mushroom mycelium.</li>
+              <li>Implement an actual graph-based AI route-selection algorithm (weighted Dijkstra) considering distance, link health, and availability.</li>
+              <li>Simulate real-time link failures with automatic alternative route discovery and packet retransmission.</li>
+              <li>Provide an intuitive, browser-based interactive web visualisation for educational and engineering demonstration.</li>
+            </ul>
+          </article>
+
+          <!-- Methodology -->
+          <article class="glass-card info-card">
+            <div class="info-card-header">
+              <span class="info-num">03</span>
+              <h3>Methodology</h3>
+            </div>
+            <ol class="styled-list numbered">
+              <li><strong>Biological Modeling:</strong> Map fungal hyphae, junctions, and nutrient flow to weighted undirected graph structures.</li>
+              <li><strong>Graph Construction:</strong> Build a 12-node, 24-edge resilient mesh topology with distance and congestion metrics.</li>
+              <li><strong>AI Pathfinding:</strong> Execute Dijkstra's shortest-path algorithm across active edges to minimise total transmission cost.</li>
+              <li><strong>Fault Injection &amp; Recovery:</strong> Allow dynamic link deactivation, trigger instant topology re-evaluation, and animate packet rerouting.</li>
+            </ol>
+          </article>
+
+          <!-- Tools & Technologies -->
+          <article class="glass-card info-card">
+            <div class="info-card-header">
+              <span class="info-num">04</span>
+              <h3>Tools &amp; Technologies</h3>
+            </div>
+            <div class="tech-pills">
+              <span class="tech-pill">HTML5 Semantic Structure</span>
+              <span class="tech-pill">CSS3 Glassmorphism &amp; Grid</span>
+              <span class="tech-pill">JavaScript (ES6+)</span>
+              <span class="tech-pill">Interactive SVG Graphics</span>
+              <span class="tech-pill">Graph Data Structures</span>
+              <span class="tech-pill">Dijkstra's Shortest-Path Algorithm</span>
+              <span class="tech-pill">RequestAnimationFrame Engine</span>
+            </div>
+            <p class="mt-sm">
+              Engineered as a zero-dependency client-side web application requiring no backend server or external runtime.
+            </p>
+          </article>
+
+          <!-- Expected Outcomes -->
+          <article class="glass-card info-card info-card-wide">
+            <div class="info-card-header">
+              <span class="info-num">05</span>
+              <h3>Expected Outcomes</h3>
+            </div>
+            <div class="outcomes-grid">
+              <div class="outcome-item">
+                <strong>Resilient Communication</strong>
+                <span>Continuous data delivery even when multiple primary branches are severed.</span>
+              </div>
+              <div class="outcome-item">
+                <strong>Real-Time AI Transparency</strong>
+                <span>Clear visualisation of hop counts, route weights, and live failover decisions.</span>
+              </div>
+              <div class="outcome-item">
+                <strong>Interactive Demonstration</strong>
+                <span>A presentation-ready web tool bridging biological inspiration and network engineering.</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TEAM SECTION ==================== -->
+    <section id="team" class="team-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Project Contributors</span>
+          <h2>Engineering Project Team</h2>
+          <p>Department of Computer Science &amp; Engineering &bull; Final Year Capstone Project</p>
+        </div>
+
+        <div class="team-grid">
+          <div class="glass-card team-card">
+            <div class="avatar">AR</div>
+            <h3>Aarav Sharma</h3>
+            <span class="role">Team Lead &amp; Network Architecture</span>
+            <p>Designed the 12-node mycelium mesh topology, biological mapping, and fault-tolerance testing scenarios.</p>
+          </div>
+          <div class="glass-card team-card">
+            <div class="avatar">PS</div>
+            <h3>Priya Nair</h3>
+            <span class="role">AI Route Algorithm Developer</span>
+            <p>Implemented the weighted Dijkstra shortest-path engine, congestion cost metrics, and automatic failover logic.</p>
+          </div>
+          <div class="glass-card team-card">
+            <div class="avatar">RK</div>
+            <h3>Rohan Kulkarni</h3>
+            <span class="role">Web Visualisation &amp; UI Engineer</span>
+            <p>Built the responsive glassmorphism interface, SVG mycelium renderer, and packet motion engine.</p>
+          </div>
+          <div class="glass-card team-card guide-card">
+            <div class="avatar">DR</div>
+            <h3>Dr. Meera Iyer</h3>
+            <span class="role">Project Mentor &amp; Faculty Guide</span>
+            <p>Supervised bio-inspired routing validation, performance telemetry design, and academic documentation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <strong>MyceliNet AI</strong> &mdash; Mushroom-Inspired Computer Network Using AI-Based Route Selection and Web Visualisation
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#simulation">Simulation</a>
+        <a href="#comparison">Comparison</a>
+        <a href="#project-info">Project Info</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
